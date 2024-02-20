@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Stocks {% endblock %}
+
+{% block content %}
+
+
+
+<div class= "col-md-6 offset-md-3">
+
+</br>
+</br>
+</br>
+
+
+<h1> Choose the company of your interest... </h1>
+</br>
+
+<form method="POST" action= "{ url 'stock_tracker'}">
+    {% csrf_token %}
+    <select class="form-select" size="25" multiple aria-label="Multiple select example">
+        {% for option in stock_list %}:
+            <option value="{{option}}">{{option}}</option>
+        {% endfor %}
+    </select>
+    </br>
+    <div class="d-grid gap-2">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+
+
+</form>
+</div>
+
+{% endblock %}
+

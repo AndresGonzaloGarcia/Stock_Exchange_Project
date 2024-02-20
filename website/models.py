@@ -1,6 +1,8 @@
 from django.db import models
 
 class Stocks(models.Model):
-    title= models.CharField(max_length= 50)
-    stock_code = models.CharField(max_lenght= 5)
-    price= models.DecimalField(decimal_places= 2)
+    stock_code = models.CharField(max_length= 5)
+    price= models.DecimalField(max_digits= 10, decimal_places= 2)
+    
+class TickerCode(models.Model):
+    ticket = models.CharField(max_length= 5)
