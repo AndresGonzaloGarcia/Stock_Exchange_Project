@@ -5,4 +5,5 @@ class Stocks(models.Model):
     price= models.DecimalField(max_digits= 10, decimal_places= 2)
     
 class TickerCode(models.Model):
-    ticket = models.CharField(max_length= 5)
+    title = models.CharField(max_length= 40)
+    ticker = models.CharField(max_length= 5)
