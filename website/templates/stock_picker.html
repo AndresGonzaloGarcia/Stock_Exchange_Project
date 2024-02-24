@@ -19,8 +19,8 @@
 <form method="POST" action= "{% url 'stock_tracker' %}">
     {% csrf_token %}
     <select class="form-select" name="selected_tickers" size="25" multiple aria-label="Multiple select example">
-        {% for option in stock_ticker_list %}:
-            <option value="{{option.ticker}}">{{option.title}} - Ticker: {{option.ticker}}</option>
+        {% for option in stock_ticker_list %}
+            <option value="{{option.title}},{{option.ticker}}">{{option.title}} - Ticker: {{option.ticker}}</option>
         {% endfor %}
     </select>
     </br>
