@@ -15,9 +15,12 @@
 
 <h1 class="display-4">Choose the companies of your interest</h1>
 </br>
+
+<h1 class="display-6">Here is a list of the most popular searches:</h1>
+
 </br>
 
-
+<!-- SELECT FROM LIST -->
 <form method="POST" action= "{% url 'stock_tracker' %}">
     {% csrf_token %}
     <select class="form-select" name="selected_tickers" size="25" multiple aria-label="Multiple select example">
@@ -29,10 +32,29 @@
     <div class="d-grid gap-2">
         <input class="btn btn-primary" type="submit" value="Submit">
     </div>
-
-
 </form>
+</br>
+
+<h1 class="display-6">Or you can input one ticker of your desire:</h1>
+
+</br>
+
+<!-- DIRECT INPUT FROM CLIENT -->
+
+<form method="POST" action="{% url 'stock_tracker' %}">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Ticker" aria-label="Ticker" aria-describedby="button-addon2" name="ticker_input">
+        <button class="btn btn-outline-secondary" type="submit" id="submit_2">Submit</button>
+    </div>
+</form>
+
+</br>
+</br>
+
 </div>
+
+
 
 {% endblock %}
 
